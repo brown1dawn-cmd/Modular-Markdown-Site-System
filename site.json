@@ -1,0 +1,10 @@
+{
+  "name": "Modular Markdown Site System",
+  "shortName": "Modular",
+  "description": "A bilingual, multi-template static site generated from Markdown content blocks.",
+  "defaultLanguage": "zh",
+  "languages": ["zh", "en"],
+  "author": "Modular Studio",
+  "baseUrl": "https://example.com",
+  "theme": {"accent": "#d7f56b", "ink": "#16211e", "paper": "#f1efe7"}
+}

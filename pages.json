@@ -1,0 +1,95 @@
+{
+  "generatedAt": "2026-09-23T14:05:23.388393",
+  "pages": [
+    {
+      "slug": "index",
+      "lang": "zh",
+      "title": "首頁",
+      "description": "以內容模組驅動的數位工作室首頁。",
+      "template": "home",
+      "url": "/zh/index.html",
+      "order": 1
+    },
+    {
+      "slug": "about",
+      "lang": "zh",
+      "title": "關於我們",
+      "description": "了解 Modular Markdown Site System 的方法與信念。",
+      "template": "about",
+      "url": "/zh/about.html",
+      "order": 2
+    },
+    {
+      "slug": "services",
+      "lang": "zh",
+      "title": "服務",
+      "description": "用可組合的內容系統，讓每一次更新都更快。",
+      "template": "services",
+      "url": "/zh/services.html",
+      "order": 3
+    },
+    {
+      "slug": "work",
+      "lang": "zh",
+      "title": "成果",
+      "description": "一組以策略、設計與內容共同完成的數位成果。",
+      "template": "work",
+      "url": "/zh/work.html",
+      "order": 4
+    },
+    {
+      "slug": "contact",
+      "lang": "zh",
+      "title": "聯絡",
+      "description": "告訴我們你的下一個內容挑戰。",
+      "template": "contact",
+      "url": "/zh/contact.html",
+      "order": 5
+    },
+    {
+      "slug": "index",
+      "lang": "en",
+      "title": "Home",
+      "description": "A digital studio homepage powered by modular content.",
+      "template": "home",
+      "url": "/en/index.html",
+      "order": 1
+    },
+    {
+      "slug": "about",
+      "lang": "en",
+      "title": "About",
+      "description": "Learn about the approach and convictions behind Modular Markdown Site System.",
+      "template": "about",
+      "url": "/en/about.html",
+      "order": 2
+    },
+    {
+      "slug": "services",
+      "lang": "en",
+      "title": "Services",
+      "description": "Move faster with a composable content system.",
+      "template": "services",
+      "url": "/en/services.html",
+      "order": 3
+    },
+    {
+      "slug": "work",
+      "lang": "en",
+      "title": "Selected work",
+      "description": "Digital outcomes shaped by strategy, design, and content.",
+      "template": "work",
+      "url": "/en/work.html",
+      "order": 4
+    },
+    {
+      "slug": "contact",
+      "lang": "en",
+      "title": "Contact",
+      "description": "Tell us about your next content challenge.",
+      "template": "contact",
+      "url": "/en/contact.html",
+      "order": 5
+    }
+  ]
+}
