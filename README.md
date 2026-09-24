@@ -36,6 +36,19 @@ pnpm run deploy
 
 For Cloudflare Workers Builds, use `pnpm run build` as the build command and `pnpm run deploy` as the deploy command. The dry run should report the files read from `dist/public` and exit without uploading. The Python Markdown builder remains available for the independent static HTML output described above.
 
+### Workers Builds dashboard settings
+
+In the Worker’s **Settings → Build**, configure the two-step pipeline required by Cloudflare:
+
+| Setting | Value |
+| --- | --- |
+| Build command | `pnpm run build` |
+| Deploy command | `pnpm exec wrangler deploy` |
+| Preview command | `pnpm exec wrangler preview` |
+| Root directory | repository root (blank) |
+
+The build command is required because `wrangler.jsonc` points `assets.directory` at `dist/public`, which is created by Vite. If the deploy command runs first, Wrangler correctly reports that `/dist/public` does not exist. Cloudflare’s Workers Builds process runs the build command first and the deploy command second; after saving these settings, retry the build.
+
 ## Project structure
 
 ```text
