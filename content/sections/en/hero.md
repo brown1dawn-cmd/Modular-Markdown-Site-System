@@ -1,5 +1,5 @@
-# Let content grow like a product
+# Reading the past<br><em>with people in mind.</em>
 
-We separate pages, templates, and Markdown content into clear modules—so your team can ship updates without touching HTML.
+Wang Xiaomin is a historian at Galaxy University whose work connects everyday archives, urban memory, and the stories that official records leave behind.
 
-[Explore the system →](/en/services.html)
+[Explore the research →](/en/work.html)

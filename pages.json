@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-23T14:05:23.388393",
+  "generatedAt": "2026-09-24T12:26:57.972958",
   "pages": [
     {
       "slug": "index",
       "lang": "zh",
-      "title": "首頁",
-      "description": "以內容模組驅動的數位工作室首頁。",
+      "title": "王曉民｜歷史學者",
+      "description": "銀河大學歷史學者王曉民的雙語學術作品集示範。",
       "template": "home",
       "url": "/zh/index.html",
       "order": 1
@@ -13,8 +13,8 @@
     {
       "slug": "about",
       "lang": "zh",
-      "title": "關於我們",
-      "description": "了解 Modular Markdown Site System 的方法與信念。",
+      "title": "經歷與故事",
+      "description": "王曉民的學術經歷、研究轉向與歷史觀。",
       "template": "about",
       "url": "/zh/about.html",
       "order": 2
@@ -22,8 +22,8 @@
     {
       "slug": "services",
       "lang": "zh",
-      "title": "服務",
-      "description": "用可組合的內容系統，讓每一次更新都更快。",
+      "title": "能力與專長",
+      "description": "從檔案研究到公共史學，王曉民的研究與教學能力。",
       "template": "services",
       "url": "/zh/services.html",
       "order": 3
@@ -31,8 +31,8 @@
     {
       "slug": "work",
       "lang": "zh",
-      "title": "成果",
-      "description": "一組以策略、設計與內容共同完成的數位成果。",
+      "title": "論文與成就",
+      "description": "王曉民的代表論文、研究計畫與學術成就示範。",
       "template": "work",
       "url": "/zh/work.html",
       "order": 4
@@ -40,8 +40,8 @@
     {
       "slug": "contact",
       "lang": "zh",
-      "title": "聯絡",
-      "description": "告訴我們你的下一個內容挑戰。",
+      "title": "邀請交流",
+      "description": "邀請王曉民進行演講、研究合作或課程交流。",
       "template": "contact",
       "url": "/zh/contact.html",
       "order": 5
@@ -49,8 +49,8 @@
     {
       "slug": "index",
       "lang": "en",
-      "title": "Home",
-      "description": "A digital studio homepage powered by modular content.",
+      "title": "Wang Xiaomin | Historian",
+      "description": "A bilingual academic portfolio demo for Wang Xiaomin, historian at Galaxy University.",
       "template": "home",
       "url": "/en/index.html",
       "order": 1
@@ -58,8 +58,8 @@
     {
       "slug": "about",
       "lang": "en",
-      "title": "About",
-      "description": "Learn about the approach and convictions behind Modular Markdown Site System.",
+      "title": "Biography & story",
+      "description": "Wang Xiaomin's academic path, intellectual turning points, and approach to history.",
       "template": "about",
       "url": "/en/about.html",
       "order": 2
@@ -67,8 +67,8 @@
     {
       "slug": "services",
       "lang": "en",
-      "title": "Services",
-      "description": "Move faster with a composable content system.",
+      "title": "Capabilities & expertise",
+      "description": "Research and teaching capabilities spanning archives, public history, and historical methods.",
       "template": "services",
       "url": "/en/services.html",
       "order": 3
@@ -76,8 +76,8 @@
     {
       "slug": "work",
       "lang": "en",
-      "title": "Selected work",
-      "description": "Digital outcomes shaped by strategy, design, and content.",
+      "title": "Publications & achievements",
+      "description": "A demo index of Wang Xiaomin's selected publications, projects, and achievements.",
       "template": "work",
       "url": "/en/work.html",
       "order": 4
@@ -85,8 +85,8 @@
     {
       "slug": "contact",
       "lang": "en",
-      "title": "Contact",
-      "description": "Tell us about your next content challenge.",
+      "title": "Connect",
+      "description": "Invite Wang Xiaomin for a lecture, research collaboration, or teaching exchange.",
       "template": "contact",
       "url": "/en/contact.html",
       "order": 5

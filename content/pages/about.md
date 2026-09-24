@@ -1,11 +1,11 @@
 ---
 slug: about
 title:
-  zh: 關於我們
-  en: About
+  zh: 經歷與故事
+  en: Biography & story
 description:
-  zh: 了解 Modular Markdown Site System 的方法與信念。
-  en: Learn about the approach and convictions behind Modular Markdown Site System.
+  zh: 王曉民的學術經歷、研究轉向與歷史觀。
+  en: Wang Xiaomin's academic path, intellectual turning points, and approach to history.
 template: about
 order: 2
 visible: true

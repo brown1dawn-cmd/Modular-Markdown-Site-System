@@ -1,11 +1,11 @@
 ---
 slug: work
 title:
-  zh: 成果
-  en: Selected work
+  zh: 論文與成就
+  en: Publications & achievements
 description:
-  zh: 一組以策略、設計與內容共同完成的數位成果。
-  en: Digital outcomes shaped by strategy, design, and content.
+  zh: 王曉民的代表論文、研究計畫與學術成就示範。
+  en: A demo index of Wang Xiaomin's selected publications, projects, and achievements.
 template: work
 order: 4
 visible: true

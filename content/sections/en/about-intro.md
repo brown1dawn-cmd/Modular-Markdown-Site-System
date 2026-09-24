@@ -1,3 +1,5 @@
-# Content deserves its own infrastructure
+# A historian of ordinary traces
 
-A good website is not a one-off screen. It is a system that can be assembled, edited, translated, and published again and again.
+Wang Xiaomin began with a question about silence: what happens to a community when its most important experiences are never entered into an official archive? That question has shaped a career across social history, urban studies, and public humanities.
+
+**Demo profile note:** dates, affiliations, and biographical details below are illustrative placeholders for future editing.

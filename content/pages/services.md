@@ -1,11 +1,11 @@
 ---
 slug: services
 title:
-  zh: 服務
-  en: Services
+  zh: 能力與專長
+  en: Capabilities & expertise
 description:
-  zh: 用可組合的內容系統，讓每一次更新都更快。
-  en: Move faster with a composable content system.
+  zh: 從檔案研究到公共史學，王曉民的研究與教學能力。
+  en: Research and teaching capabilities spanning archives, public history, and historical methods.
 template: services
 order: 3
 visible: true

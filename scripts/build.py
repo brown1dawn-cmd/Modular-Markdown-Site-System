@@ -108,7 +108,7 @@ def build(output: Path, clean: bool) -> list[dict[str, Any]]:
                 "canonical": f'{site["baseUrl"]}/{lang}/{slug}.html',
                 "lang_url": f'/{other_lang}/{slug}.html',
                 "lang_label": "EN" if lang == "zh" else "中文",
-                "footer_line": "內容是基礎設施。" if lang == "zh" else "Content is infrastructure.",
+                "footer_line": "歷史讓當下變得可見。" if lang == "zh" else "History makes the present visible.",
                 "year": str(datetime.now().year),
                 "page_number": str(page.get("order", "" )).zfill(2),
                 "nav": nav_html(pages, lang, slug),
@@ -127,7 +127,7 @@ def build(output: Path, clean: bool) -> list[dict[str, Any]]:
                 "description": page["description"][lang], "template": page.get("template", "default"),
                 "url": f"/{lang}/{slug}.html", "order": page.get("order", 999),
             })
-    (output / "index.html").write_text("""<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=/zh/"><link rel="canonical" href="/zh/index.html"><title>Modular Markdown Site System</title><a href="/zh/index.html">Open the site</a>""", encoding="utf-8")
+    (output / "index.html").write_text("""<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=/zh/"><link rel="canonical" href="/zh/index.html"><title>王曉民｜Wang Xiaomin · Historian</title><a href="/zh/index.html">Open Wang Xiaomin's site</a>""", encoding="utf-8")
     (output / "pages.json").write_text(json.dumps({"generatedAt": datetime.now().isoformat(), "pages": manifest}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (ROOT / "pages.json").write_text(json.dumps({"generatedAt": datetime.now().isoformat(), "pages": manifest}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return manifest

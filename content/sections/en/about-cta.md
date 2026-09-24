@@ -1,3 +1,2 @@
-## Ready to make content work simpler?
-
-[See the services →](/en/services.html)
+## Want to read the work behind the story?
+[Browse publications & achievements →](/en/work.html)

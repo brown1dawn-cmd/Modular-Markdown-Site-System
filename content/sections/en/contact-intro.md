@@ -1,3 +1,3 @@
-# Let’s start with a good question
+# Bring a question, not a finished answer
 
-Whether you are planning a new site, organizing content, or making updates easier, we would love to hear from you.
+For invited talks, collaborative research, graduate supervision, or public history projects, send a short note about the question you want to explore.

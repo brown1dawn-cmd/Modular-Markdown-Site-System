@@ -1,9 +1,10 @@
-## What we can build together
+## Research capabilities
 
-| Module | What it includes | Best moment |
+| Practice | What it includes | Best for |
 | --- | --- | --- |
-| **Content architecture** | Audits, taxonomy, and bilingual content models | Before a redesign |
-| **Template system** | Page templates and region rules | During brand growth |
-| **Publishing flow** | Git, CI, and Cloudflare Pages | When teams collaborate |
+| **Archival research** | Municipal records, personal papers, visual sources, and provenance mapping | Deep historical investigation |
+| **Oral history** | Interview design, consent, transcription, and narrative analysis | Community memory projects |
+| **Public history** | Exhibitions, digital essays, public lectures, and editorial translation | Research with a wider audience |
+| **Teaching & mentoring** | Seminar design, thesis advising, and source criticism workshops | Students building their own method |
 
-> Turn one-off production into a repeatable capability.
+> Specialisms: modern East Asian history · urban memory · everyday archives · history of emotions · public humanities

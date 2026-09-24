@@ -1,5 +1,6 @@
-## 找到我們
+## 學術聯絡
+**wang.xiaomin@galaxy-university.example**  
+銀河大學 · 歷史學系  
+晤談時間：週二、週四 14:00–16:00
 
-**hello@modular.studio**  
-台北 · 台灣  
-週一至週五，10:00–18:00
+**Demo 提示：** 正式發布前請替換 Email 與辦公室資訊。

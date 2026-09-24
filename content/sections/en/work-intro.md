@@ -1,3 +1,3 @@
-# A few combinations we like
+# Selected publications & recognitions
 
-Every project starts with one question: how can content get closer to people and closer to the way a team works?
+A working bibliography of books, articles, exhibitions, and the forms of recognition that have helped the research travel. **All entries are demo records for editorial testing.**

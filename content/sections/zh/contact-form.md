@@ -1,5 +1,2 @@
-## 寫下你的想法
-
-<div class="contact-form-note">這個示範表單是模板中的可替換區域。接上表單服務後即可收集訊息。</div>
-
-<form class="demo-form" action="#" method="post" onsubmit="return false"><label>你的名字<input type="text" placeholder="例如：林小姐" /></label><label>你的 Email<input type="email" placeholder="name@example.com" /></label><label>想聊聊什麼？<textarea rows="4" placeholder="簡單描述你的內容挑戰"></textarea></label><button type="submit">送出訊息 →</button></form>
+## 寫下你的研究想法
+<div class="contact-form-note">這是前端示範表單。正式發布前，請接上表單或 Email 服務。</div><form class="demo-form" action="#" method="post" onsubmit="return false"><label>你的名字<input type="text" placeholder="例如：林老師" /></label><label>你的 Email<input type="email" placeholder="name@example.com" /></label><label>想一起探索什麼？<textarea rows="4" placeholder="演講、合作、指導或公共史學"></textarea></label><button type="submit">送出邀請 →</button></form>

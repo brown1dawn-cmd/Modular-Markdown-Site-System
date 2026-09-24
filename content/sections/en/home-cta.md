@@ -1,3 +1,4 @@
-## Your next update should not start in HTML
+## History is not behind us.
+It is a method for noticing what the present has learned to ignore.
 
-Give content to the team. Let the system take care of the system.
+[Read the biography →](/en/about.html)

@@ -1,3 +1,2 @@
-## Add the next page to the system
-
-[Start a conversation →](/en/contact.html)
+## A research question can travel.
+[Invite a lecture or collaboration →](/en/contact.html)

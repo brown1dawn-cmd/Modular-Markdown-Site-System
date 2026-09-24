@@ -1,10 +1,10 @@
 {
-  "name": "Modular Markdown Site System",
-  "shortName": "Modular",
-  "description": "A bilingual, multi-template static site generated from Markdown content blocks.",
+  "name": "Wang Xiaomin / 王曉民",
+  "shortName": "Wang Xiaomin",
+  "description": "A bilingual academic portfolio demo for Wang Xiaomin, historian at Galaxy University.",
   "defaultLanguage": "zh",
   "languages": ["zh", "en"],
-  "author": "Modular Studio",
+  "author": "Wang Xiaomin",
   "baseUrl": "https://example.com",
   "theme": {"accent": "#d7f56b", "ink": "#16211e", "paper": "#f1efe7"}
 }

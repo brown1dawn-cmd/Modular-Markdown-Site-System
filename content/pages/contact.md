@@ -1,11 +1,11 @@
 ---
 slug: contact
 title:
-  zh: 聯絡
-  en: Contact
+  zh: 邀請交流
+  en: Connect
 description:
-  zh: 告訴我們你的下一個內容挑戰。
-  en: Tell us about your next content challenge.
+  zh: 邀請王曉民進行演講、研究合作或課程交流。
+  en: Invite Wang Xiaomin for a lecture, research collaboration, or teaching exchange.
 template: contact
 order: 5
 visible: true

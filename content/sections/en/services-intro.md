@@ -1,3 +1,3 @@
-# From content audit to a sustainable publishing flow
+# Methods are a form of care
 
-We bring strategy, information architecture, and template systems to the same table so websites become easier to maintain.
+Wang Xiaomin works across the full research cycle: finding material, checking whose voice is missing, making an argument, and returning the work to the communities it describes.
