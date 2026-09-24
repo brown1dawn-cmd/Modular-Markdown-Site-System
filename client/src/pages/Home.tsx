@@ -1,175 +1,131 @@
-import {
-  ArrowUpRight,
-  BookOpen,
-  CalendarDays,
-  ChevronRight,
-  FileText,
-  Languages,
-  Menu,
-  ScrollText,
-  Sparkles,
-  UserRound,
-  X,
-} from "lucide-react";
+import { ArrowUpRight, BookOpen, CalendarDays, ChevronRight, FileText, Languages, Menu, ScrollText, Sparkles, UserRound, X } from "lucide-react";
 import { useState } from "react";
+import { useLocation } from "wouter";
 
 type Language = "zh" | "en";
 
 const copy = {
   zh: {
-    nav: ["關於", "能力", "論文", "交流"],
+    nav: ["首頁", "我的故事", "研究專長", "論文成就", "教學指導", "演講交流", "聯絡我"],
+    paths: ["/", "/biography", "/expertise", "/publications", "/teaching", "/talks", "/connect"],
     eyebrow: "歷史學 · 檔案 · 公共記憶",
-    title: "讓歷史回到",
-    titleEm: "人的身上。",
-    intro:
-      "王曉民是銀河大學歷史學者，研究日常檔案、城市記憶，以及官方記錄之外仍然存在的故事。",
-    primary: "閱讀研究",
-    secondary: "認識王曉民",
-    portraitLabel: "GALAXY UNIVERSITY / HISTORY",
-    portraitNote: "Academic profile demo",
-    aboutKicker: "01 / 經歷與故事",
-    aboutTitle: "研究日常痕跡的\n歷史學者",
-    aboutBody:
-      "王曉民從一個關於沉默的問題開始：當一個社群最重要的經驗從未被寫進官方檔案，它會發生什麼事？這個問題帶著他走過社會史、城市研究與公共人文。",
+    heroTitle: "讓歷史回到",
+    heroEm: "人的身上。",
+    heroIntro: "我在銀河大學研究歷史，關注日常檔案、城市記憶，以及官方記錄之外仍然存在的故事。",
+    explore: "閱讀我的研究",
+    meet: "認識我",
+    photo: "可上傳個人照片",
+    photoNote: "建議尺寸 800 × 1000 px\n正式發布前替換這個位置",
+    homeTag: "首頁 / WANG XIAOMIN",
+    homeTitle: "我研究那些\n容易被忽略的痕跡。",
+    homeBody: "我的工作在檔案館、課堂與公共空間之間移動。我相信歷史不只是過去的知識，也是一種重新理解現在的練習。",
+    homeLinks: ["我的故事", "研究專長", "最新論文"],
+    aboutTag: "01 / 我的故事",
+    aboutTitle: "我從一個\n關於沉默的問題開始。",
+    aboutBody: "當一個社群最重要的經驗從未被寫進官方檔案，它會發生什麼事？這個問題帶著我走過社會史、城市研究與公共人文，也成為我在銀河大學教學與研究的起點。",
     quote: "歷史之所以有用，是因為它讓當下變得不那麼確定。",
-    quoteBy: "— 王曉民",
-    timeline: [
-      ["2012", "東方子午線大學歷史學博士", "學會把檔案視為一種論證，而不是倉庫。"],
-      ["2015", "加入銀河大學", "建立以慢讀與共同證據為核心的研討課文化。"],
-      ["2019", "成立日常檔案研究室", "將口述歷史與市政、家庭檔案放在一起閱讀。"],
-    ],
-    capabilityKicker: "02 / 能力與專長",
-    capabilityTitle: "方法也是\n一種照顧。",
-    capabilityBody: "從尋找材料，到確認誰的聲音被遺漏，再把成果帶回它所描述的社群。",
-    capabilities: [
-      ["檔案研究", "市政檔案、私人文書、視覺材料與來源脈絡整理"],
-      ["口述歷史", "訪談設計、同意程序、轉錄與敘事分析"],
-      ["公共史學", "展覽、數位文章、公開演講與編輯轉譯"],
-      ["教學與指導", "研討課設計、論文指導與史料批判工作坊"],
-    ],
-    publicationKicker: "03 / 論文與成就",
-    publicationTitle: "研究書架",
-    publicationBody: "一份持續生長的書目，記錄研究如何走出校園，成為更大的對話。",
-    publications: [
-      ["專書 · 2023", "記得街道的城市", "從日常檔案出發，研究戰後港口城市如何形成城市記憶。"],
-      ["期刊論文 · 2022", "聆聽未被歸檔的聲音", "結合口述歷史與市政記錄，提出閱讀「缺席」的方法。"],
-      ["展覽 · 2021", "警報之後", "與居民共同策劃的公共史學計畫，整理照片、聲音與記憶。"],
-    ],
+    quoteBy: "— 我在研究筆記裡寫下的一句話",
+    timelineTitle: "我的學術時間軸",
+    timeline: [["2012", "東方子午線大學歷史學博士", "學會把檔案視為一種論證，而不是倉庫。"], ["2015", "加入銀河大學", "建立以慢讀與共同證據為核心的研討課文化。"], ["2019", "成立日常檔案研究室", "將口述歷史與市政、家庭檔案放在一起閱讀。"], ["2024", "北大西洋記憶研究院訪問學人", "把研究延伸至比較城市記憶。"]],
+    expertiseTag: "02 / 研究專長",
+    expertiseTitle: "我用方法，\n照顧被留下的聲音。",
+    expertiseBody: "我參與研究的完整循環：尋找材料、確認誰的聲音被遺漏、建立論證，再把成果帶回它所描述的社群。",
+    capabilities: [["檔案研究", "市政檔案、私人文書、視覺材料與來源脈絡整理"], ["口述歷史", "訪談設計、同意程序、轉錄與敘事分析"], ["公共史學", "展覽、數位文章、公開演講與編輯轉譯"], ["情感史", "從日常語彙、身體經驗與記憶理解歷史變化"]],
+    pubTag: "03 / 論文與成就",
+    pubTitle: "我的研究書架",
+    pubBody: "這是一份持續生長的書目，記錄我的研究如何走出校園，成為更大的對話。",
+    publications: [["專書 · 2023", "記得街道的城市", "從日常檔案出發，研究戰後港口城市如何形成城市記憶。"], ["期刊論文 · 2022", "聆聽未被歸檔的聲音", "結合口述歷史與市政記錄，提出閱讀「缺席」的方法。"], ["展覽 · 2021", "警報之後", "與居民共同策劃的公共史學計畫，整理照片、聲音與記憶。"]],
+    achievementTitle: "我走過的幾個節點",
     achievements: ["銀河大學教學創新獎，2024", "日常檔案研究室主持人，2019–至今", "入選子午線歷史學會專書獎，2023", "「城市如何記得」主題演講，2025"],
-    contactKicker: "04 / 邀請交流",
-    contactTitle: "帶著問題來，\n不必先帶著答案。",
-    contactBody: "歡迎邀請演講、研究合作、研究生指導，或一起籌備公共史學計畫。",
-    contactButton: "發送研究邀請",
-    footer: "Wang Xiaomin / 王曉民 · Galaxy University",
+    teachingTag: "04 / 教學與指導",
+    teachingTitle: "我把課堂\n當作一間工作坊。",
+    teachingBody: "我希望學生先學會提出更好的問題，再急著尋找看似簡單的答案。課堂是一起讀材料、練習懷疑、逐步建立自己方法的地方。",
+    teachingCards: [["研討課", "慢讀史料", "近現代東亞史、城市記憶、情感史"], ["論文指導", "一起找問題", "從題目形成到史料批判與寫作"], ["工作坊", "讓研究被看見", "口述歷史、展覽與公共寫作"]],
+    talksTag: "05 / 演講與交流",
+    talksTitle: "我願意把研究\n帶到更多地方。",
+    talksBody: "如果你正在籌備講座、課程、研究工作坊或公共史學計畫，我很樂意從一個具體問題開始交流。",
+    talks: [["公開演講", "城市如何記得", "從居民口述、舊照片與城市聲音談記憶的形成。"], ["研究工作坊", "如何閱讀一份檔案", "給第一次進入檔案館的研究者的實作課。"], ["對談主持", "歷史與日常生活", "和不同領域的創作者一起談記憶如何進入作品。"]],
+    connectTag: "06 / 聯絡我",
+    connectTitle: "帶著問題來，\n不必先帶著答案。",
+    connectBody: "你可以邀請我進行演講、研究合作、研究生指導，或一起籌備公共史學計畫。",
+    connectButton: "寫信給我",
+    email: "wang.xiaomin@galaxy-university.example",
+    footer: "王曉民 · 銀河大學歷史學系",
   },
   en: {
-    nav: ["Biography", "Expertise", "Publications", "Connect"],
+    nav: ["Home", "My story", "Expertise", "Publications", "Teaching", "Talks", "Connect"],
+    paths: ["/", "/biography", "/expertise", "/publications", "/teaching", "/talks", "/connect"],
     eyebrow: "HISTORY · ARCHIVES · PUBLIC MEMORY",
-    title: "Reading the past",
-    titleEm: "with people in mind.",
-    intro:
-      "Wang Xiaomin is a historian at Galaxy University whose work connects everyday archives, urban memory, and the stories official records leave behind.",
-    primary: "Explore research",
-    secondary: "Meet Wang",
-    portraitLabel: "GALAXY UNIVERSITY / HISTORY",
-    portraitNote: "Academic profile demo",
-    aboutKicker: "01 / BIOGRAPHY & STORY",
-    aboutTitle: "A historian of\nordinary traces",
-    aboutBody:
-      "Wang Xiaomin began with a question about silence: what happens to a community when its most important experiences are never entered into an official archive? That question has shaped a career across social history, urban studies, and public humanities.",
+    heroTitle: "Reading the past",
+    heroEm: "with people in mind.",
+    heroIntro: "I study history at Galaxy University, focusing on everyday archives, urban memory, and the stories official records leave behind.",
+    explore: "Read my research",
+    meet: "Meet me",
+    photo: "Portrait photo placeholder",
+    photoNote: "Recommended: 800 × 1000 px\nReplace before publishing",
+    homeTag: "HOME / WANG XIAOMIN",
+    homeTitle: "I study the traces\nthat are easy to miss.",
+    homeBody: "My work moves between archives, classrooms, and public spaces. I see history not only as knowledge of the past, but as a practice for understanding the present again.",
+    homeLinks: ["My story", "Research expertise", "Latest publications"],
+    aboutTag: "01 / MY STORY",
+    aboutTitle: "I began with a question\nabout silence.",
+    aboutBody: "What happens to a community when its most important experiences are never entered into an official archive? That question has taken me through social history, urban studies, and public humanities, and remains the starting point for my teaching and research at Galaxy University.",
     quote: "The past becomes useful when it makes the present less certain.",
-    quoteBy: "— Wang Xiaomin",
-    timeline: [
-      ["2012", "PhD in History, East Meridian University", "Learned to treat the archive as an argument, not a warehouse."],
-      ["2015", "Joined Galaxy University", "Built a seminar culture around slow reading and shared evidence."],
-      ["2019", "Founded Everyday Archives Lab", "Connected oral histories with municipal and family records."],
-    ],
-    capabilityKicker: "02 / CAPABILITIES & EXPERTISE",
-    capabilityTitle: "Methods are\na form of care.",
-    capabilityBody: "Finding material, checking whose voice is missing, making an argument, and returning the work to the communities it describes.",
-    capabilities: [
-      ["Archival research", "Municipal records, personal papers, visual sources, and provenance mapping"],
-      ["Oral history", "Interview design, consent, transcription, and narrative analysis"],
-      ["Public history", "Exhibitions, digital essays, public lectures, and editorial translation"],
-      ["Teaching & mentoring", "Seminar design, thesis advising, and source criticism workshops"],
-    ],
-    publicationKicker: "03 / PUBLICATIONS & ACHIEVEMENTS",
-    publicationTitle: "Research shelf",
-    publicationBody: "A working bibliography that traces how research travels beyond the university and into a larger conversation.",
-    publications: [
-      ["MONOGRAPH · 2023", "Streets That Remember", "Everyday archives and the making of urban memory in postwar port cities."],
-      ["JOURNAL ARTICLE · 2022", "Listening for the Unfiled", "A method for reading absence across oral histories and municipal records."],
-      ["EXHIBITION · 2021", "After the Sirens", "A public history project with residents, photographs, remembered sound, and place."],
-    ],
+    quoteBy: "— A line from my research notebook",
+    timelineTitle: "My academic timeline",
+    timeline: [["2012", "PhD in History, East Meridian University", "I learned to treat the archive as an argument, not a warehouse."], ["2015", "Joined Galaxy University", "I built a seminar culture around slow reading and shared evidence."], ["2019", "Founded Everyday Archives Lab", "I connected oral histories with municipal and family records."], ["2024", "Visiting fellow, North Atlantic Memory Institute", "I extended my work into comparative urban memory."]],
+    expertiseTag: "02 / RESEARCH EXPERTISE",
+    expertiseTitle: "I use method\nas a form of care.",
+    expertiseBody: "I work across the full research cycle: finding material, checking whose voice is missing, making an argument, and returning the work to the communities it describes.",
+    capabilities: [["Archival research", "Municipal records, personal papers, visual sources, and provenance mapping"], ["Oral history", "Interview design, consent, transcription, and narrative analysis"], ["Public history", "Exhibitions, digital essays, public lectures, and editorial translation"], ["History of emotions", "Understanding change through everyday language, bodies, and memory"]],
+    pubTag: "03 / PUBLICATIONS & ACHIEVEMENTS",
+    pubTitle: "My research shelf",
+    pubBody: "A working bibliography that traces how my research travels beyond the university and into a larger conversation.",
+    publications: [["MONOGRAPH · 2023", "Streets That Remember", "Everyday archives and the making of urban memory in postwar port cities."], ["JOURNAL ARTICLE · 2022", "Listening for the Unfiled", "A method for reading absence across oral histories and municipal records."], ["EXHIBITION · 2021", "After the Sirens", "A public history project with residents, photographs, remembered sound, and place."]],
+    achievementTitle: "A few milestones",
     achievements: ["Galaxy University Teaching Innovation Award, 2024", "Principal investigator, Everyday Archives Lab, 2019–present", "Shortlisted, Meridian Historical Association Book Prize, 2023", "Keynote, “Cities Remember,” 2025"],
-    contactKicker: "04 / ACADEMIC EXCHANGE",
-    contactTitle: "Bring a question,\nnot a finished answer.",
-    contactBody: "Invite Wang Xiaomin for a lecture, research collaboration, graduate supervision, or a public history project.",
-    contactButton: "Send a research note",
-    footer: "Wang Xiaomin · 王曉民 · Galaxy University",
+    teachingTag: "04 / TEACHING & MENTORING",
+    teachingTitle: "I treat the classroom\nas a workshop.",
+    teachingBody: "I want students to ask better questions before reaching for easy answers. A classroom is a place to read together, practice doubt, and build a method of one’s own.",
+    teachingCards: [["Seminars", "Slow reading", "Modern East Asian history, urban memory, history of emotions"], ["Supervision", "Finding the question", "From topic formation to source criticism and writing"], ["Workshops", "Making research visible", "Oral history, exhibitions, and public writing"]],
+    talksTag: "05 / TALKS & EXCHANGE",
+    talksTitle: "I want to take research\nto more places.",
+    talksBody: "If you are planning a lecture, course, research workshop, or public history project, I would be glad to begin with one concrete question.",
+    talks: [["Public lecture", "How Cities Remember", "Memory-making through residents’ stories, old photographs, and urban sound."], ["Research workshop", "How to Read an Archive", "A practical session for researchers entering an archive for the first time."], ["Conversation", "History and Everyday Life", "A cross-disciplinary exchange about how memory enters creative work."]],
+    connectTag: "06 / CONNECT WITH ME",
+    connectTitle: "Bring a question,\nnot a finished answer.",
+    connectBody: "Invite me for a lecture, research collaboration, graduate supervision, or a public history project.",
+    connectButton: "Write to me",
+    email: "wang.xiaomin@galaxy-university.example",
+    footer: "Wang Xiaomin · Department of History, Galaxy University",
   },
 } as const;
+
+function PhotoPlaceholder({ t }: { t: { photo: string; photoNote: string } }) {
+  return <div className="photo-placeholder"><div className="photo-placeholder-frame"><UserRound size={38} strokeWidth={1} /><strong>{t.photo}</strong><span>{t.photoNote.split("\n").map((line) => <span key={line}>{line}<br /></span>)}</span></div><div className="portrait-orbit portrait-orbit-one" /><div className="portrait-orbit portrait-orbit-two" /></div>;
+}
 
 export default function Home() {
   const [language, setLanguage] = useState<Language>("zh");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [location, setLocation] = useLocation();
   const t = copy[language];
   const isZh = language === "zh";
+  const page = location === "/" ? "home" : location.replace("/", "") || "home";
+  const go = (path: string) => { setMenuOpen(false); setLocation(path); window.scrollTo({ top: 0, behavior: "smooth" }); };
 
-  return (
-    <div className="scholar-shell">
-      <div className="scholar-noise" />
-      <header className="scholar-header">
-        <a className="scholar-brand" href="#top" aria-label="Wang Xiaomin home">
-          <span className="scholar-brand-mark">王</span>
-          <span><strong>WANG XIAOMIN</strong><small>{isZh ? "歷史學者 · 銀河大學" : "HISTORIAN · GALAXY UNIVERSITY"}</small></span>
-        </a>
-        <nav className={menuOpen ? "scholar-nav is-open" : "scholar-nav"} aria-label="Primary navigation">
-          <a href="#biography" onClick={() => setMenuOpen(false)}>{t.nav[0]}</a>
-          <a href="#expertise" onClick={() => setMenuOpen(false)}>{t.nav[1]}</a>
-          <a href="#publications" onClick={() => setMenuOpen(false)}>{t.nav[2]}</a>
-          <a href="#connect" onClick={() => setMenuOpen(false)}>{t.nav[3]}</a>
-        </nav>
-        <div className="scholar-actions">
-          <button className="scholar-language" onClick={() => setLanguage(isZh ? "en" : "zh")} aria-label="Switch language"><Languages size={15} />{isZh ? "EN" : "中文"}</button>
-          <button className="scholar-menu" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">{menuOpen ? <X size={19} /> : <Menu size={19} />}</button>
-        </div>
-      </header>
+  return <div className="scholar-shell"><div className="scholar-noise" /><header className="scholar-header"><button className="scholar-brand" onClick={() => go("/")}><span className="scholar-brand-mark">王</span><span><strong>WANG XIAOMIN</strong><small>{isZh ? "歷史學者 · 銀河大學" : "HISTORIAN · GALAXY UNIVERSITY"}</small></span></button><nav className={menuOpen ? "scholar-nav is-open" : "scholar-nav"}>{t.nav.map((label, index) => <button key={label} className={t.paths[index].slice(1) === page || (index === 0 && page === "home") ? "is-current" : ""} onClick={() => go(t.paths[index])}>{label}</button>)}</nav><div className="scholar-actions"><button className="scholar-language" onClick={() => setLanguage(isZh ? "en" : "zh")}><Languages size={15} />{isZh ? "EN" : "中文"}</button><button className="scholar-menu" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">{menuOpen ? <X size={19} /> : <Menu size={19} />}</button></div></header>
+    <main>
+      {page === "home" && <><section className="scholar-hero"><div className="scholar-hero-copy"><div className="scholar-eyebrow"><span className="pulse-dot" />{t.eyebrow}</div><h1>{t.heroTitle}<br /><em>{t.heroEm}</em></h1><p className="scholar-intro">{t.heroIntro}</p><div className="scholar-hero-actions"><button className="scholar-button scholar-button-dark" onClick={() => go("/publications")}>{t.explore}<ArrowUpRight size={16} /></button><button className="scholar-text-link" onClick={() => go("/biography")}>{t.meet}<ChevronRight size={16} /></button></div></div><PhotoPlaceholder t={t} /></section><section className="scholar-section scholar-section-paper"><div className="scholar-section-tag">{t.homeTag}</div><div className="scholar-split"><div><h2>{t.homeTitle}</h2><p className="scholar-lede">{t.homeBody}</p></div><div className="home-link-list">{t.homeLinks.map((label, index) => <button key={label} onClick={() => go(t.paths[index + 1])}><span>0{index + 1}</span><strong>{label}</strong><ArrowUpRight size={16} /></button>)}</div></div></section></>}
+      {page === "biography" && <PageShell tag={t.aboutTag} title={t.aboutTitle}><div className="scholar-split"><div><p className="scholar-lede">{t.aboutBody}</p><div className="scholar-quote"><ScrollText size={23} /><p>“{t.quote}”</p><span>{t.quoteBy}</span></div></div><PhotoPlaceholder t={t} /></div><h3 className="subsection-title">{t.timelineTitle}</h3><div className="scholar-timeline">{t.timeline.map(([year, title, detail]) => <article className="timeline-row" key={year}><span className="timeline-year">{year}</span><div><h3>{title}</h3><p>{detail}</p></div><ChevronRight size={17} /></article>)}</div></PageShell>}
+      {page === "expertise" && <PageShell tag={t.expertiseTag} title={t.expertiseTitle} dark><p className="scholar-lede">{t.expertiseBody}</p><div className="capability-list page-list">{t.capabilities.map(([title, detail], index) => <article className="capability-row" key={title}><span>0{index + 1}</span><div><h3>{title}</h3><p>{detail}</p></div><ArrowUpRight size={17} /></article>)}</div></PageShell>}
+      {page === "publications" && <PageShell tag={t.pubTag} title={t.pubTitle} accent><p className="scholar-lede">{t.pubBody}</p><div className="publication-grid">{t.publications.map(([type, title, detail], index) => <article className={`publication-card publication-card-${index + 1}`} key={title}><span>{type}</span><h3>{title}</h3><p>{detail}</p><ArrowUpRight size={18} /></article>)}</div><h3 className="subsection-title">{t.achievementTitle}</h3><div className="achievement-list page-achievements">{t.achievements.map((item) => <span key={item}><Sparkles size={15} />{item}</span>)}</div></PageShell>}
+      {page === "teaching" && <PageShell tag={t.teachingTag} title={t.teachingTitle}><p className="scholar-lede">{t.teachingBody}</p><div className="teaching-grid">{t.teachingCards.map(([type, title, detail], index) => <article key={type}><span>0{index + 1} / {type}</span><h3>{title}</h3><p>{detail}</p></article>)}</div></PageShell>}
+      {page === "talks" && <PageShell tag={t.talksTag} title={t.talksTitle} dark><p className="scholar-lede">{t.talksBody}</p><div className="talk-list">{t.talks.map(([type, title, detail]) => <article key={title}><span>{type}</span><div><h3>{title}</h3><p>{detail}</p></div><ArrowUpRight size={17} /></article>)}</div></PageShell>}
+      {page === "connect" && <PageShell tag={t.connectTag} title={t.connectTitle}><div className="connect-panel"><p className="scholar-lede">{t.connectBody}</p><a className="scholar-button scholar-button-lime" href={`mailto:${t.email}`}>{t.connectButton}<ArrowUpRight size={16} /></a></div><div className="connect-meta"><span><CalendarDays size={15} />{isZh ? "週二、週四 · 14:00–16:00" : "Tue & Thu · 14:00–16:00"}</span><span><UserRound size={15} />{t.email}</span><span><FileText size={15} />{isZh ? "銀河大學 · 歷史學系" : "Department of History · Galaxy University"}</span></div></PageShell>}
+    </main><footer className="scholar-footer"><span className="scholar-footer-mark">王</span><span>{t.footer}</span><span>{isZh ? "雙語學術檔案示範" : "Bilingual academic profile demo"}</span></footer></div>;
+}
 
-      <main id="top">
-        <section className="scholar-hero">
-          <div className="scholar-hero-copy">
-            <div className="scholar-eyebrow"><span className="pulse-dot" />{t.eyebrow}</div>
-            <h1>{t.title}<br /><em>{t.titleEm}</em></h1>
-            <p className="scholar-intro">{t.intro}</p>
-            <div className="scholar-hero-actions"><a className="scholar-button scholar-button-dark" href="#publications">{t.primary}<ArrowUpRight size={16} /></a><a className="scholar-text-link" href="#biography">{t.secondary}<ChevronRight size={16} /></a></div>
-          </div>
-          <div className="scholar-portrait" aria-label={t.portraitLabel}>
-            <div className="portrait-orbit portrait-orbit-one" /><div className="portrait-orbit portrait-orbit-two" />
-            <div className="portrait-paper"><span className="portrait-monogram">王</span><span className="portrait-caption">{t.portraitLabel}</span><span className="portrait-note">{t.portraitNote}</span></div>
-          </div>
-        </section>
-
-        <section className="scholar-section scholar-section-paper" id="biography">
-          <div className="scholar-section-tag">{t.aboutKicker}</div>
-          <div className="scholar-split"><div><h2>{t.aboutTitle.split("\n").map((line) => <span key={line}>{line}<br /></span>)}</h2><p className="scholar-lede">{t.aboutBody}</p></div><div className="scholar-quote"><ScrollText size={23} /><p>“{t.quote}”</p><span>{t.quoteBy}</span></div></div>
-          <div className="scholar-timeline">{t.timeline.map(([year, title, detail]) => <article className="timeline-row" key={year}><span className="timeline-year">{year}</span><div><h3>{title}</h3><p>{detail}</p></div><ChevronRight size={17} /></article>)}</div>
-        </section>
-
-        <section className="scholar-section scholar-section-ink" id="expertise">
-          <div className="scholar-section-tag">{t.capabilityKicker}</div>
-          <div className="scholar-split scholar-split-capability"><div><h2>{t.capabilityTitle.split("\n").map((line) => <span key={line}>{line}<br /></span>)}</h2><p className="scholar-lede">{t.capabilityBody}</p></div><div className="capability-list">{t.capabilities.map(([title, detail], index) => <article className="capability-row" key={title}><span>0{index + 1}</span><div><h3>{title}</h3><p>{detail}</p></div><ArrowUpRight size={17} /></article>)}</div></div>
-        </section>
-
-        <section className="scholar-section scholar-section-lime" id="publications">
-          <div className="scholar-section-tag">{t.publicationKicker}</div><div className="scholar-publication-head"><div><h2>{t.publicationTitle}</h2><p className="scholar-lede">{t.publicationBody}</p></div><BookOpen size={38} strokeWidth={1} /></div>
-          <div className="publication-grid">{t.publications.map(([type, title, detail], index) => <article className={`publication-card publication-card-${index + 1}`} key={title}><span>{type}</span><h3>{title}</h3><p>{detail}</p><ArrowUpRight size={18} /></article>)}</div>
-          <div className="achievement-bar"><div className="achievement-label"><Sparkles size={17} />{isZh ? "代表成就" : "Selected achievements"}</div><div className="achievement-list">{t.achievements.map((achievement) => <span key={achievement}>{achievement}</span>)}</div></div>
-        </section>
-
-        <section className="scholar-section scholar-section-paper scholar-connect" id="connect"><div className="scholar-section-tag">{t.contactKicker}</div><div className="connect-panel"><div><h2>{t.contactTitle.split("\n").map((line) => <span key={line}>{line}<br /></span>)}</h2><p className="scholar-lede">{t.contactBody}</p></div><a className="scholar-button scholar-button-lime" href="mailto:wang.xiaomin@galaxy-university.example">{t.contactButton}<ArrowUpRight size={16} /></a></div><div className="connect-meta"><span><CalendarDays size={15} />{isZh ? "週二、週四 · 14:00–16:00" : "Tue & Thu · 14:00–16:00"}</span><span><UserRound size={15} />wang.xiaomin@galaxy-university.example</span><span><FileText size={15} />{isZh ? "銀河大學 · 歷史學系" : "Department of History · Galaxy University"}</span></div></section>
-      </main>
-      <footer className="scholar-footer"><span className="scholar-footer-mark">王</span><span>{t.footer}</span><span>{isZh ? "雙語學術檔案示範" : "Bilingual academic profile demo"}</span></footer>
-    </div>
-  );
+function PageShell({ tag, title, children, dark = false, accent = false }: { tag: string; title: string; children: React.ReactNode; dark?: boolean; accent?: boolean }) {
+  return <section className={`scholar-section scholar-page ${dark ? "scholar-section-ink" : accent ? "scholar-section-lime" : "scholar-section-paper"}`}><div className="scholar-section-tag">{tag}</div><h2>{title}</h2><div className="page-content">{children}</div></section>;
 }

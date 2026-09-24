@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-24T12:26:57.972958",
+  "generatedAt": "2026-09-24T12:32:54.743906",
   "pages": [
     {
       "slug": "index",
       "lang": "zh",
       "title": "王曉民｜歷史學者",
-      "description": "銀河大學歷史學者王曉民的雙語學術作品集示範。",
+      "description": "我在銀河大學研究歷史的雙語學術作品集示範。",
       "template": "home",
       "url": "/zh/index.html",
       "order": 1
@@ -14,7 +14,7 @@
       "slug": "about",
       "lang": "zh",
       "title": "經歷與故事",
-      "description": "王曉民的學術經歷、研究轉向與歷史觀。",
+      "description": "我的學術經歷、研究轉向與歷史觀。",
       "template": "about",
       "url": "/zh/about.html",
       "order": 2
@@ -23,7 +23,7 @@
       "slug": "services",
       "lang": "zh",
       "title": "能力與專長",
-      "description": "從檔案研究到公共史學，王曉民的研究與教學能力。",
+      "description": "從檔案研究到公共史學，我的研究與教學能力。",
       "template": "services",
       "url": "/zh/services.html",
       "order": 3
@@ -32,7 +32,7 @@
       "slug": "work",
       "lang": "zh",
       "title": "論文與成就",
-      "description": "王曉民的代表論文、研究計畫與學術成就示範。",
+      "description": "我的代表論文、研究計畫與學術成就示範。",
       "template": "work",
       "url": "/zh/work.html",
       "order": 4
@@ -41,7 +41,7 @@
       "slug": "contact",
       "lang": "zh",
       "title": "邀請交流",
-      "description": "邀請王曉民進行演講、研究合作或課程交流。",
+      "description": "邀請我進行演講、研究合作或課程交流。",
       "template": "contact",
       "url": "/zh/contact.html",
       "order": 5
@@ -50,7 +50,7 @@
       "slug": "index",
       "lang": "en",
       "title": "Wang Xiaomin | Historian",
-      "description": "A bilingual academic portfolio demo for Wang Xiaomin, historian at Galaxy University.",
+      "description": "My bilingual academic portfolio as a historian at Galaxy University.",
       "template": "home",
       "url": "/en/index.html",
       "order": 1
@@ -59,7 +59,7 @@
       "slug": "about",
       "lang": "en",
       "title": "Biography & story",
-      "description": "Wang Xiaomin's academic path, intellectual turning points, and approach to history.",
+      "description": "My academic path, intellectual turning points, and approach to history.",
       "template": "about",
       "url": "/en/about.html",
       "order": 2
@@ -77,7 +77,7 @@
       "slug": "work",
       "lang": "en",
       "title": "Publications & achievements",
-      "description": "A demo index of Wang Xiaomin's selected publications, projects, and achievements.",
+      "description": "A demo index of my selected publications, projects, and achievements.",
       "template": "work",
       "url": "/en/work.html",
       "order": 4
@@ -86,7 +86,7 @@
       "slug": "contact",
       "lang": "en",
       "title": "Connect",
-      "description": "Invite Wang Xiaomin for a lecture, research collaboration, or teaching exchange.",
+      "description": "Invite me for a lecture, research collaboration, or teaching exchange.",
       "template": "contact",
       "url": "/en/contact.html",
       "order": 5
