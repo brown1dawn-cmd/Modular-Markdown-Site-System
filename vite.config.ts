@@ -1,4 +1,5 @@
 import { jsxLocPlugin } from "@builder.io/vite-plugin-jsx-loc";
+import { cloudflare } from "@cloudflare/vite-plugin";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import fs from "node:fs";
@@ -206,6 +207,7 @@ function vitePluginStorageProxy(): Plugin {
 export default defineConfig({
   plugins: [
     react(),
+    cloudflare(),
     tailwindcss(),
     jsxLocPlugin(),
     vitePluginManusRuntime(),
