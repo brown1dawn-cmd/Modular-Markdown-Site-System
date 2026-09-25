@@ -80,3 +80,11 @@ button { cursor: pointer; }
 .timeline-dialog-backdrop { position: fixed; z-index: 50; inset: 0; display: grid; place-items: center; padding: 24px; background: rgba(22,33,30,.48); backdrop-filter: blur(8px); animation: dialog-in .18s ease-out; }.timeline-dialog { position: relative; width: min(100%, 570px); padding: clamp(30px, 5vw, 60px); background: var(--paper); color: var(--ink); box-shadow: 14px 18px 0 rgba(22,33,30,.16); }.timeline-dialog-close { position: absolute; top: 18px; right: 18px; display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: transparent; color: var(--ink); cursor: pointer; }.timeline-dialog-year { color: #8ca517; font: 500 11px 'DM Mono', monospace; letter-spacing: .12em; }.timeline-dialog h2 { max-width: 450px; margin: 20px 0 18px; font: 400 clamp(35px, 5vw, 60px)/.95 'Instrument Serif', 'Noto Serif TC', serif; }.timeline-dialog p { max-width: 450px; margin: 0; font-size: 16px; line-height: 1.75; }.timeline-dialog-note { display: block; margin-top: 34px; padding-top: 17px; border-top: 1px solid var(--line); color: var(--muted); font: 500 10px/1.6 'DM Mono', monospace; letter-spacing: .04em; }@keyframes dialog-in { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .timeline-dialog-backdrop { animation: none; } }
 @media (max-width: 760px) { .timeline-row:hover, .timeline-row:focus-visible { padding-left: 10px; padding-right: 10px; }.timeline-copy strong { font-size: 24px; }.timeline-dialog { padding: 34px 25px 28px; } }
+
+
+/* Restrained academic palette: sage, olive, charcoal, and warm ivory */
+.scholar-shell { --ink: #27332f; --muted: #68736d; --paper: #f4f1e8; --deep-paper: #303b37; --lime: #bcc79a; --accent: #7e8d63; --accent-soft: #cbd2ad; --line: rgba(39,51,47,.18); }
+.scholar-header { background: rgba(244,241,232,.94); }
+.scholar-nav a:hover, .scholar-nav button:hover, .scholar-nav button.is-current { color: var(--accent); }
+.scholar-quote svg, .connect-meta svg, .photo-placeholder-frame svg, .page-achievements svg { color: var(--accent); }
+.publication-card-3, .teaching-grid article:nth-child(3) { background: var(--accent-soft); }
