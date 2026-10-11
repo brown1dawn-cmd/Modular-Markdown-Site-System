@@ -1,2 +1,0 @@
-## Send a research note
-<div class="contact-form-note">This form is a front-end demo. Connect it to your preferred form or email service before publishing.</div><form class="demo-form" action="#" method="post" onsubmit="return false"><label>Your name<input type="text" placeholder="e.g. Dr. Lin" /></label><label>Your email<input type="email" placeholder="name@example.com" /></label><label>What would you like to explore?<textarea rows="4" placeholder="Lecture, collaboration, supervision, or public history"></textarea></label><button type="submit">Send inquiry →</button></form>
