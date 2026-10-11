@@ -1,16 +1,16 @@
 ---
-tag: 04 / TEACHING & MENTORING
-title: "I treat the classroom\nas a workshop."
+tag: 04 / 教學與指導
+title: "我把課堂\n當作一間工作坊。"
 cards:
-  - kicker: Seminars
-    title: Slow reading
-    detail: Modern East Asian history, urban memory, history of emotions
-  - kicker: Supervision
-    title: Finding the question
-    detail: From topic formation to source criticism and writing
-  - kicker: Workshops
-    title: Making research visible
-    detail: Oral history, exhibitions, and public writing
+  - kicker: 研討課
+    title: 慢讀史料
+    detail: 近現代東亞史、城市記憶、情感史
+  - kicker: 論文指導
+    title: 一起找問題
+    detail: 從題目形成到史料批判與寫作
+  - kicker: 工作坊
+    title: 讓研究被看見
+    detail: 口述歷史、展覽與公共寫作
 ---
 
-I want students to ask better questions before reaching for easy answers. A classroom is a place to read together, practice doubt, and build a method of one's own.
+我希望學生先學會提出更好的問題，再急著尋找看似簡單的答案。課堂是一起讀材料、練習懷疑、逐步建立自己方法的地方。
