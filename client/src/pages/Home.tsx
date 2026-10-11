@@ -44,16 +44,22 @@ function ContactForm({ t, email }: { t: SiteContent["connect"]; email: string })
     event.preventDefault();
     if (state === "sending") return;
     setState("sending");
+    // 20 秒超時：網路卡住時給使用者一個說法，而不是永遠轉圈圈
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 20000);
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email: from, message }),
+        signal: controller.signal,
       });
+      clearTimeout(timer);
       if (res.ok) setState("done");
       else if (res.status === 501) setState("fallback");
       else setState("error");
     } catch {
+      clearTimeout(timer);
       setState("error");
     }
   };
