@@ -1,10 +1,1 @@
-{
-  "name": "Wang Xiaomin / 王曉民",
-  "shortName": "Wang Xiaomin",
-  "description": "A bilingual academic portfolio demo for Wang Xiaomin, historian at Galaxy University.",
-  "defaultLanguage": "zh",
-  "languages": ["zh", "en"],
-  "author": "Wang Xiaomin",
-  "baseUrl": "https://example.com",
-  "theme": {"accent": "#d7f56b", "ink": "#16211e", "paper": "#f1efe7"}
-}
+{"author":"王曉民","baseUrl":"https://example.com","chrome":{"en":{"brandSub":"HISTORIAN · GALAXY UNIVERSITY","closeDialog":"Close","footerNote":"Bilingual academic profile demo","nav":["Home","My story","Expertise","Publications","Teaching","Talks","Connect"],"openMenu":"Open navigation menu"},"zh":{"brandSub":"歷史學者 · 銀河大學","closeDialog":"關閉","footerNote":"雙語學術檔案示範","nav":["首頁","我的故事","研究專長","論文成就","教學指導","演講交流","聯絡我"],"openMenu":"開啟導覽選單"}},"contact":{"affiliation":{"en":"Department of History · Galaxy University","zh":"銀河大學 · 歷史學系"},"email":"wang.xiaomin@galaxy-university.example","officeHours":{"en":"Tue & Thu · 14:00–16:00","zh":"週二、週四 · 14:00–16:00"}},"defaultLanguage":"zh","description":"A bilingual academic portfolio demo for Wang Xiaomin, historian at Galaxy University.","languages":["zh","en"],"name":"王曉民｜Wang Xiaomin · Historian","routes":["/","/biography","/expertise","/publications","/teaching","/talks","/connect"],"shortName":"Wang Xiaomin","theme":{"accent":"#d7f56b","ink":"#16211e","paper":"#f1efe7"}}
