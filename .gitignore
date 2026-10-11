@@ -115,3 +115,6 @@ client/public/__manus__/version.json
 # Cloudflare Workers local state
 .wrangler
 .dev.vars*
+
+# 由 scripts/build-content.mjs 自動產生（每次 build 前重新編譯），不進版控
+client/src/content.generated.ts
