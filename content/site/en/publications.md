@@ -1,22 +1,22 @@
 ---
-tag: 03 / 論文與成就
-title: 我的研究書架
-achievementTitle: 我走過的幾個節點
+tag: 03 / PUBLICATIONS & ACHIEVEMENTS
+title: My research shelf
+achievementTitle: A few milestones
 publications:
-  - type: 專書 · 2023
-    title: 記得街道的城市
-    detail: 從日常檔案出發，研究戰後港口城市如何形成城市記憶。
-  - type: 期刊論文 · 2022
-    title: 聆聽未被歸檔的聲音
-    detail: 結合口述歷史與市政記錄，提出閱讀「缺席」的方法。
-  - type: 展覽 · 2021
-    title: 警報之後
-    detail: 與居民共同策劃的公共史學計畫，整理照片、聲音與記憶。
+  - type: MONOGRAPH · 2023
+    title: Streets That Remember
+    detail: Everyday archives and the making of urban memory in postwar port cities.
+  - type: JOURNAL ARTICLE · 2022
+    title: Listening for the Unfiled
+    detail: A method for reading absence across oral histories and municipal records.
+  - type: EXHIBITION · 2021
+    title: After the Sirens
+    detail: A public history project with residents, photographs, remembered sound, and place.
 achievements:
-  - 銀河大學教學創新獎，2024
-  - 日常檔案研究室主持人，2019–至今
-  - 入選子午線歷史學會專書獎，2023
-  - 「城市如何記得」主題演講，2025
+  - Galaxy University Teaching Innovation Award, 2024
+  - Principal investigator, Everyday Archives Lab, 2019–present
+  - Shortlisted, Meridian Historical Association Book Prize, 2023
+  - Keynote, "Cities Remember," 2025
 ---
 
-這是一份持續生長的書目，記錄我的研究如何走出校園，成為更大的對話。
+A working bibliography that traces how my research travels beyond the university and into a larger conversation.
