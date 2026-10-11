@@ -1,4 +1,4 @@
-name: Build static site
+name: Build check
 
 on:
   push:
@@ -13,12 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: pnpm/action-setup@v4
         with:
-          python-version: '3.11'
-      - run: pip install -r scripts/requirements.txt
-      - run: python scripts/build.py --clean --output dist
-      - uses: actions/upload-artifact@v4
+          version: 10.4.1
+      - uses: actions/setup-node@v4
         with:
-          name: modular-markdown-site
-          path: dist
+          node-version: "22"
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run check
+      - run: pnpm run build
