@@ -1,2 +1,0 @@
-Markdown>=3.6
-PyYAML>=6.0
