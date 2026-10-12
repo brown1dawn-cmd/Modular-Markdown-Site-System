@@ -55,7 +55,9 @@ export default function Home() {
   const [location, setLocation] = useLocation();
   const t = content[language] as SiteContent;
   const isZh = language === "zh";
-  const page = location === "/" ? "home" : location.replace("/", "") || "home";
+  const PAGES = ["home", "biography", "expertise", "publications", "teaching", "talks", "connect"];
+  const rawPage = location === "/" ? "home" : location.replace("/", "") || "home";
+  const page = PAGES.includes(rawPage) ? rawPage : "home";
   const go = (path: string) => {
     setMenuOpen(false);
     setLocation(path);
