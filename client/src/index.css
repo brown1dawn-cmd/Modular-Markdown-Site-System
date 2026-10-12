@@ -11,7 +11,7 @@ button { cursor: pointer; }
 
 
 /* Wang Xiaomin bilingual scholar portfolio */
-.scholar-shell { --ink: #16211e; --muted: #66716b; --paper: #f1efe7; --deep-paper: #202b27; --lime: #d7f56b; --line: rgba(22,33,30,.17); min-height: 100vh; background: var(--paper); color: var(--ink); }
+.scholar-shell { --ink: #16211e; --muted: #4e5953; --paper: #f1efe7; --deep-paper: #202b27; --lime: #d7f56b; --line: rgba(22,33,30,.17); min-height: 100vh; background: var(--paper); color: var(--ink); }
 .scholar-noise { position: fixed; inset: 0; z-index: 10; pointer-events: none; opacity: .045; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.75'/%3E%3C/svg%3E"); }
 .scholar-header { position: relative; z-index: 20; display: flex; align-items: center; justify-content: space-between; min-height: 84px; padding: 16px clamp(22px, 5vw, 72px); border-bottom: 1px solid var(--line); background: rgba(241,239,231,.92); backdrop-filter: blur(14px); }
 .scholar-brand { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; }
