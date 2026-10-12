@@ -19,7 +19,7 @@ scripts/build-content.mjs    ← 編譯器：MD → client/src/content.generated
         ▼
 Vite + React                 ← 讀取編譯產物，輸出靜態站
         ▼
-Cloudflare Workers           ← 靜態資源＋聯絡表單 API（/api/contact）
+Cloudflare Workers           ← 純靜態資源託管（SPA fallback）
 ```
 
 **單一管線**：只有 `pnpm run build` 一條路徑，沒有第二套 renderer 會漂移。
@@ -42,19 +42,9 @@ pnpm run check      # TypeScript 型別檢查
 pnpm run deploy     # 建置＋部署到 Cloudflare Workers
 ```
 
-## 聯絡表單
+## 聯絡我
 
-「聯絡我」頁有真正的表單，送出後打 `POST /api/contact`，由 `worker/index.ts` 轉寄到站長信箱。
-
-設定（Cloudflare dashboard → Workers → Settings → Variables → Environment Variables）：
-
-| 變數 | 必填 | 說明 |
-| --- | --- | --- |
-| `RESEND_API_KEY` | 是 | [Resend](https://resend.com) 的 API key（免費額度足夠個人網站） |
-| `CONTACT_TO` | 是 | 收件信箱 |
-| `CONTACT_FROM` | 否 | 寄件者，預設 `website@resend.dev`（正式用請換成自己的網域並完成驗證） |
-
-還沒設定時 API 回 501，前端會自動顯示「直接寫信」按鈕降級，不會壞掉。
+「聯絡我」頁沒有表單，只有一顆「寫信給我」按鈕（`mailto:`，點了會開啟訪客的郵件軟體）＋直接顯示的信箱地址。信箱地址在 `site.json` 的 `contact.email`，換人使用時改那裡即可。
 
 ## Cloudflare Workers Builds 設定
 
@@ -81,7 +71,6 @@ client/src/
   pages/Home.tsx        唯一頁面：7 個路由的版面（設計層，只讀內容，不寫文案）
   content.ts            內容模型的 TypeScript 型別
   content.generated.ts  編譯器產物（git 不追蹤，每次 build 重新產生）
-worker/index.ts         /api/contact＋靜態資源的 Worker 入口
 wrangler.jsonc          Worker 名稱、靜態資源目錄、SPA fallback
 ```
 

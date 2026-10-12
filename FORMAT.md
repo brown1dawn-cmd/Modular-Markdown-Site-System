@@ -13,7 +13,7 @@
 | `publications.md` | 論文成就（著作卡片＋榮譽列表） |
 | `teaching.md` | 教學指導（三張卡片） |
 | `talks.md` | 演講交流（演講列表） |
-| `connect.md` | 聯絡我（引言＋表單文案） |
+| `connect.md` | 聯絡我（引言＋寫信按鈕文案） |
 
 每個檔案都有 `zh`（中文）和 `en`（英文）兩個版本，放在 `content/site/zh/` 和 `content/site/en/`。
 
@@ -45,7 +45,7 @@ links:
 - `publications:` — 著作，每筆 `type`（如「專書 · 2023」）／`title`／`detail`。
 - `capabilities:`／`talks:`／`cards:` — 標題＋說明的列表，每筆 `title`／`detail`（teaching 的卡片多一個 `kicker` 小標）。
 - `achievements:` — 純文字列表，一行一條。
-- `connect.md` 的 `form*` 欄位是表單的標籤文字（姓名、送出、成功訊息等）。
+- `connect.md` 的 `buttonLabel` 是「寫信給我」按鈕文字，`emailLabel` 是信箱地址前的小標（信箱／Email）；按鈕點了會開啟訪客的郵件軟體（`mailto:`），信箱地址在 `site.json` 的 `contact.email`。
 
 ## 全站設定（site.json）
 
@@ -64,5 +64,4 @@ links:
 - [ ] 16 個 Markdown 檔的中英文都填完（不要留「銀河大學」這種示範文字）
 - [ ] `portrait` 已上傳真實照片
 - [ ] `site.json` 的信箱、單位、網站名稱已換成客戶的
-- [ ] 聯絡表單的 Resend 環境變數已設定（見 README）
 - [ ] 用手機＋電腦各看一次，確認中文標題沒有重疊、文字沒有被背景蓋掉
