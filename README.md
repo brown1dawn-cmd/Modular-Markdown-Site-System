@@ -46,6 +46,14 @@ pnpm run deploy     # 建置＋部署到 Cloudflare Workers
 
 「聯絡我」頁沒有表單，只有一顆「寫信給我」按鈕（`mailto:`，點了會開啟訪客的郵件軟體）＋直接顯示的信箱地址。信箱地址在 `site.json` 的 `contact.email`，換人使用時改那裡即可。
 
+## PWA（可安裝到手機）
+
+網站是 PWA：`client/public/sw.js`（Service Worker，手寫、無依賴）＋ `manifest.webmanifest`（編譯器在 prebuild 時用 `site.json` 的 `name`／`shortName`／`description`／`theme` 自動產生，不進版控）。
+
+- 圖示在 `client/public/icons/`（192／512 px，萊姆底＋「王」字；換客戶時重畫這兩張即可）
+- 站名、主題色跟著 `site.json` 走，換客戶不用改程式碼
+- 離線可開：靜態資源 cache-first，頁面導航離線時 fallback 到快取的 `index.html`
+
 ## Cloudflare Workers Builds 設定
 
 沿用原本的兩段式設定即可：
