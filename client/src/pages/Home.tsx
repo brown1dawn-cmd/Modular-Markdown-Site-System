@@ -34,72 +34,19 @@ function PhotoBlock({ portrait, label, note }: { portrait: string; label: string
   );
 }
 
-function ContactForm({ t, email }: { t: SiteContent["connect"]; email: string }) {
-  const [name, setName] = useState("");
-  const [from, setFrom] = useState("");
-  const [message, setMessage] = useState("");
-  const [state, setState] = useState<"idle" | "sending" | "done" | "fallback" | "error">("idle");
-
-  const submit = async (event: React.FormEvent) => {
-    event.preventDefault();
-    if (state === "sending") return;
-    setState("sending");
-    // 20 秒超時：網路卡住時給使用者一個說法，而不是永遠轉圈圈
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 20000);
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email: from, message }),
-        signal: controller.signal,
-      });
-      clearTimeout(timer);
-      if (res.ok) setState("done");
-      else if (res.status === 501) setState("fallback");
-      else setState("error");
-    } catch {
-      clearTimeout(timer);
-      setState("error");
-    }
-  };
-
-  if (state === "done") {
-    return (
-      <div className="contact-form">
-        <p className="contact-form-note is-success">{t.formSuccess}</p>
-      </div>
-    );
-  }
-
+function MailCta({ t, email }: { t: SiteContent["connect"]; email: string }) {
   return (
-    <form className="contact-form" onSubmit={submit}>
-      <h3 className="contact-form-title">{t.formTitle}</h3>
-      <label>
-        <span>{t.formName}</span>
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} required maxLength={100} autoComplete="name" />
-      </label>
-      <label>
-        <span>{t.formEmail}</span>
-        <input type="email" value={from} onChange={(e) => setFrom(e.target.value)} required maxLength={200} autoComplete="email" />
-      </label>
-      <label>
-        <span>{t.formMessage}</span>
-        <textarea value={message} onChange={(e) => setMessage(e.target.value)} required maxLength={5000} rows={5} />
-      </label>
-      {state === "fallback" && <p className="contact-form-note">{t.formFallback}</p>}
-      {state === "error" && <p className="contact-form-note is-error">{t.formError}</p>}
+    <div className="contact-form">
       <div className="contact-form-actions">
-        <button type="submit" className="scholar-button scholar-button-lime" disabled={state === "sending"}>
-          {state === "sending" ? t.formSending : t.formSubmit}
+        <a className="scholar-button scholar-button-lime" href={`mailto:${email}`}>
+          {t.buttonLabel}
           <ArrowUpRight size={16} />
-        </button>
-        <a className="scholar-text-link" href={`mailto:${email}`}>
-          {t.orWriteDirectly}
-          <ChevronRight size={16} />
         </a>
       </div>
-    </form>
+      <p className="contact-form-note">
+        {t.emailLabel}：<a className="scholar-text-link" href={`mailto:${email}`}>{email}</a>
+      </p>
+    </div>
   );
 }
 
@@ -321,7 +268,7 @@ export default function Home() {
           <PageShell tag={t.connect.tag} title={t.connect.title}>
             <div className="connect-panel">
               <div className="scholar-lede" dangerouslySetInnerHTML={{ __html: t.connect.bodyHtml }} />
-              <ContactForm t={t.connect} email={t.contact.email} />
+              <MailCta t={t.connect} email={t.contact.email} />
             </div>
             <div className="connect-meta">
               <span>
