@@ -184,6 +184,28 @@ if (existsSync(INDEX_HTML)) {
   }
 }
 
+/* ---------- manifest.webmanifest：PWA 安裝資訊跟著 site.json 走 ---------- */
+const MANIFEST = path.join(ROOT, "client", "public", "manifest.webmanifest");
+const manifest = {
+  name: site.name,
+  short_name: site.shortName || site.name,
+  description: site.description || "",
+  lang: site.defaultLanguage === "en" ? "en" : "zh-Hant",
+  dir: "ltr",
+  start_url: "/",
+  scope: "/",
+  display: "standalone",
+  background_color: site.theme?.paper || "#f1efe7",
+  theme_color: site.theme?.accent || "#d7f56b",
+  icons: [
+    { src: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+    { src: "/icons/icon-512.png", sizes: "512x512", type: "image/png", purpose: "any maskable" },
+  ],
+};
+mkdirSync(path.dirname(MANIFEST), { recursive: true });
+writeFileSync(MANIFEST, JSON.stringify(manifest, null, 2) + "\n");
+ok("PWA manifest 已產生：client/public/manifest.webmanifest");
+
 /* ---------- 輸出 TypeScript 模組 ---------- */
 const ts = `/**
  * 由 scripts/build-content.mjs 自動產生，請勿手動編輯。
