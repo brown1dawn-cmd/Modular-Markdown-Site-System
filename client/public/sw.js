@@ -9,8 +9,10 @@
  * /assets/*.css、/sw.js、/icons/*、/manifest.webmanifest 等靜態檔時，
  * 不得用它們的內容覆蓋離線備援頁（舊版會把 CSS 內容寫進 /index.html 鍵，
  * 導致離線備援頁損毀）。CACHE 改名以清掉舊版可能已污染的快取。
+ * v3 加強：靜態資源分支加 content-type 防護，避免 SPA fallback 的
+ * index.html（200 + text/html）被當成 CSS/JS 快取導致永久無樣式。
  */
-const CACHE = "mmss-v2";
+const CACHE = "mmss-v3";
 const CORE = ["/", "/index.html", "/manifest.webmanifest"];
 
 self.addEventListener("install", (event) => {
@@ -59,7 +61,12 @@ self.addEventListener("fetch", (event) => {
       (hit) =>
         hit ||
         fetch(request).then((res) => {
-          if (res.ok) {
+          const contentType = res.headers.get("content-type") || "";
+          const path = url.pathname;
+          const isAsset = path.startsWith("/assets/") || path.startsWith("/icons/") || path.startsWith("/images/");
+          // 防毒：SPA fallback 會對缺失檔案回 200 + text/html，不可把 HTML 當靜態資源快取
+          const cacheable = res.ok && (!isAsset || !contentType.includes("text/html"));
+          if (cacheable) {
             const copy = res.clone();
             caches.open(CACHE).then((cache) => cache.put(request, copy));
           }
