@@ -118,24 +118,12 @@ export interface TalksSection {
   talks: TalkEntry[];
 }
 
-export interface ConnectFormStrings {
-  formTitle: string;
-  formName: string;
-  formEmail: string;
-  formMessage: string;
-  formSubmit: string;
-  formSending: string;
-  formSuccess: string;
-  formFallback: string;
-  formError: string;
-  orWriteDirectly: string;
-}
-
-export interface ConnectSection extends ConnectFormStrings {
+export interface ConnectSection {
   tag: string;
   title: string;
   bodyHtml: string;
   buttonLabel: string;
+  emailLabel: string;
 }
 
 export interface SiteContent {
