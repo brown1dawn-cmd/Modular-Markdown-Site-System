@@ -4,7 +4,7 @@ import { useLocation } from "wouter";
 import type { Lang, SiteContent, TimelineEntry } from "../content";
 import { content, siteMeta } from "../content.generated";
 
-function PhotoBlock({ portrait, label, note }: { portrait: string; label: string; note: string }) {
+function PhotoBlock({ portrait, label, note, monogram }: { portrait: string; label: string; note: string; monogram: string }) {
   if (portrait) {
     return (
       <div className="photo-frame">
@@ -16,7 +16,7 @@ function PhotoBlock({ portrait, label, note }: { portrait: string; label: string
     <div className="photo-placeholder">
       <div className="photo-placeholder-frame">
         <span className="pp-bookplate" aria-hidden="true">
-          {label.slice(0, 1)}
+          {monogram}
         </span>
         <strong>{label}</strong>
         <span>
@@ -126,7 +126,7 @@ export default function Home() {
                   </button>
                 </div>
               </div>
-              <PhotoBlock portrait={t.hero.portrait} label={t.hero.photoLabel} note={t.hero.photoNote} />
+              <PhotoBlock portrait={t.hero.portrait} label={t.hero.photoLabel} note={t.hero.photoNote} monogram="王" />
             </section>
             <section className="scholar-section scholar-section-paper">
               <div className="scholar-section-tag">{t.home.tag}</div>
@@ -206,7 +206,7 @@ export default function Home() {
                   <span>{t.biography.quoteBy}</span>
                 </div>
               </div>
-              <PhotoBlock portrait={t.biography.portrait} label={t.biography.photoLabel} note={t.biography.photoNote} />
+              <PhotoBlock portrait={t.biography.portrait} label={t.biography.photoLabel} note={t.biography.photoNote} monogram="王" />
             </div>
             <h3 className="subsection-title">{t.biography.timelineTitle}</h3>
             <div className="scholar-timeline">
