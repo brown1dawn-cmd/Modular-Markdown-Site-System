@@ -9,15 +9,15 @@ function PhotoBlock({ portrait, label, note }: { portrait: string; label: string
     return (
       <div className="photo-frame">
         <img src={portrait} alt={label} />
-        <div className="portrait-orbit portrait-orbit-one" />
-        <div className="portrait-orbit portrait-orbit-two" />
       </div>
     );
   }
   return (
     <div className="photo-placeholder">
       <div className="photo-placeholder-frame">
-        <UserRound size={38} strokeWidth={1} />
+        <span className="pp-bookplate" aria-hidden="true">
+          {label.slice(0, 1)}
+        </span>
         <strong>{label}</strong>
         <span>
           {note.split("\n").map((line) => (
@@ -28,8 +28,6 @@ function PhotoBlock({ portrait, label, note }: { portrait: string; label: string
           ))}
         </span>
       </div>
-      <div className="portrait-orbit portrait-orbit-one" />
-      <div className="portrait-orbit portrait-orbit-two" />
     </div>
   );
 }
@@ -137,7 +135,55 @@ export default function Home() {
                   <h2>{t.home.title}</h2>
                   <div className="scholar-lede" dangerouslySetInnerHTML={{ __html: t.home.bodyHtml }} />
                 </div>
-                <div className="home-link-list">
+                <div className="home-picks">
+                  <article className="pick-col">
+                    <div className="pick-tag">{t.expertise.tag}</div>
+                    <h3>{t.expertise.title}</h3>
+                    <ul>
+                      {t.expertise.capabilities.slice(0, 3).map((cap) => (
+                        <li key={cap.title}>
+                          <strong>{cap.title}</strong>
+                          <span>{cap.detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <button className="pick-more" onClick={() => go("/expertise")} aria-label={t.expertise.title}>
+                      <ArrowUpRight size={15} />
+                    </button>
+                  </article>
+                  <article className="pick-col">
+                    <div className="pick-tag">{t.publications.tag}</div>
+                    <h3>{t.publications.title}</h3>
+                    <ul>
+                      {t.publications.publications.slice(0, 3).map((pub) => (
+                        <li key={pub.title}>
+                          <strong>{pub.title}</strong>
+                          <span>{pub.detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <button className="pick-more" onClick={() => go("/publications")} aria-label={t.publications.title}>
+                      <ArrowUpRight size={15} />
+                    </button>
+                  </article>
+                  <article className="pick-col">
+                    <div className="pick-tag">{t.teaching.tag}</div>
+                    <h3>{t.teaching.title}</h3>
+                    <ul>
+                      {t.teaching.cards.slice(0, 3).map((card) => (
+                        <li key={card.title}>
+                          <strong>{card.title}</strong>
+                          <span>{card.detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <button className="pick-more" onClick={() => go("/teaching")} aria-label={t.teaching.title}>
+                      <ArrowUpRight size={15} />
+                    </button>
+                  </article>
+                </div>
+              </div>
+              <div className="home-link-list">
                   {t.home.links.map((link, index) => (
                     <button key={link.label} onClick={() => go(link.path)}>
                       <span>0{index + 1}</span>
@@ -146,7 +192,6 @@ export default function Home() {
                     </button>
                   ))}
                 </div>
-              </div>
             </section>
           </>
         )}
