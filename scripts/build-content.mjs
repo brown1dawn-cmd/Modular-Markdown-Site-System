@@ -40,7 +40,7 @@ const REQUIRED = {
   publications: ["tag", "title", "publications", "achievementTitle", "achievements"],
   teaching: ["tag", "title", "cards"],
   talks: ["tag", "title", "talks"],
-  connect: ["tag", "title", "buttonLabel", "formTitle", "formName", "formEmail", "formMessage", "formSubmit", "formSending", "formSuccess", "formFallback", "formError"],
+  connect: ["tag", "title", "buttonLabel", "emailLabel"],
 };
 
 function fail(msg) {
