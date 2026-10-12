@@ -4,8 +4,13 @@
  * - 靜態資源：cache-first（抓過一次就離線可用）
  * - 頁面導航：network-first，離線時 fallback 到快取的 index.html（SPA 路由）
  * - 第三方請求（字體等）不經手，直接走網路
+ *
+ * v2 修正：navigate 處理器只快取「頁面路由」的回應。直接在網址列開啟
+ * /assets/*.css、/sw.js、/icons/*、/manifest.webmanifest 等靜態檔時，
+ * 不得用它們的內容覆蓋離線備援頁（舊版會把 CSS 內容寫進 /index.html 鍵，
+ * 導致離線備援頁損毀）。CACHE 改名以清掉舊版可能已污染的快取。
  */
-const CACHE = "mmss-v1";
+const CACHE = "mmss-v2";
 const CORE = ["/", "/index.html", "/manifest.webmanifest"];
 
 self.addEventListener("install", (event) => {
@@ -37,7 +42,11 @@ self.addEventListener("fetch", (event) => {
       fetch(request)
         .then((res) => {
           const copy = res.clone();
-          caches.open(CACHE).then((cache) => cache.put("/index.html", copy));
+          const path = url.pathname;
+          const isPageRoute = res.ok && !path.startsWith("/assets/") && !/\.[a-z0-9]+$/i.test(path);
+          if (isPageRoute) {
+            caches.open(CACHE).then((cache) => cache.put("/index.html", copy));
+          }
           return res;
         })
         .catch(() => caches.match("/index.html")),
